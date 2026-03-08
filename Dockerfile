@@ -2,10 +2,28 @@
 FROM codercom/enterprise-desktop:ubuntu
 
 USER root
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    git curl wget jq ca-certificates iputils-ping net-tools openjdk-11-jdk \
-    openjdk-11-source python3 python3-pip vim less  \
-  && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    git \
+    curl \
+    wget \
+    jq \
+    ca-certificates \
+    iputils-ping \
+    net-tools \
+    openjdk-11-jdk \
+    openjdk-11-source \
+    python3 \
+    python3-pip \
+    vim \
+    less \
+    curl -sSL https://dl.google.com/linux/linux_signing_key.pub | apt-key add - && \
+    echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list && \
+    apt-get update && \
+    apt-get install -y \
+    google-chrome-stable \
+    --no-install-recommends && \
+    rm -rf /var/lib/apt/lists/*
 
 COPY *.desktop /usr/share/applications
 
