@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export IMAGE="ghcr.io/${GHUSER}/coder-workspace-desktop:0.1.5"
+export IMAGE="ghcr.io/${GHUSER}/coder-workspace-desktop:0.1.6"
 
 echo "Building ${IMAGE}"
 

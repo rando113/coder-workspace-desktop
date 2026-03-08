@@ -34,5 +34,8 @@ RUN mkdir -p /opt/jetbrains && \
 # GitHub documents this as the easiest way to connect package <-> repo. :contentReference[oaicite:6]{index=6}
 LABEL org.opencontainers.image.source="https://github.com/rando113/coder-workspace-desktop"
 
+RUN chsh -s /bin/bash
+ENV SHELL=/bin/bash
+
 USER coder
 WORKDIR /home/coder
