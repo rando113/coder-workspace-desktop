@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=IntelliJ IDEA
+Comment=IntelliJ IDEA IDE
+Exec=/opt/jetbrains/backends/IC/idea-IC-252.28539.33/bin/idea.sh %f
+Icon=/opt/jetbrains/backends/IC/idea-IC-252.28539.33/bin/idea.svg
+Terminal=false
+Type=Application
+Categories=Development;IDE;
+StartupWMClass=jetbrains-idea
+

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+export IMAGE="ghcr.io/${GHUSER}/coder-workspace-desktop:0.1.5"
+
+echo "Building ${IMAGE}"
+
+echo "${GHPAT}" | docker login ghcr.io -u "${GHUSER}" --password-stdin
+
+docker build --progress plain -t "${IMAGE}" .
+docker push "${IMAGE}"
